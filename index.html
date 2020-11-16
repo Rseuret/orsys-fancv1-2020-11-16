@@ -2,18 +2,45 @@
 <html>
 	<head>
 		<script src="./node_modules/angular/angular.min.js"></script>
+		<script src="./home-controller.js"></script>
 	</head>
 
-	<body ng-app="">
-		<h1>Démo ngModel et ngBind et Expressions</h1>
-		<div>
+	<body ng-app="myApp">
+		<section ng-controller="homeCtrl">
+			<h1>Démo ngModel et ngBind et Expressions</h1>
 			<div>
-				<label>Nom :</label>
-				<input type="text" ng-model="nom" />
+				<div>
+					<label>Nom :</label>
+					<input type="text" ng-model="nom" ng-model-options="{ updateOn: 'blur', debounce: 1000 }" />
+				</div>
+
+				<p ng-bind="nom"></p>
+				<p>{{ nom }}</p>
 			</div>
 
-			<p ng-bind="nom"></p>
-			<p>{{ nom }}</p>
-		</div>
+			<hr />
+			<h1>Démo ngModel et ngStyle</h1>
+			<select ng-model="maCouleur">
+				<option value="#000">Noir</option>
+				<option value="yellow">Jaune</option>
+				<option value="#F00">Rouge</option>
+				<option value="#00F">Bleu</option>
+			</select>
+
+			<!-- ngStyle attend un obj literal -->
+			<p ng-style="{ color: maCouleur }">{{ maCouleur }}</p>
+
+			<hr />
+			<h1>Démo ngClick</h1>
+
+			<!-- ngClick -->
+			<button ng-click="showName()">Afficher le nom</button>
+
+			<hr />
+			<h1>Démo ngRepeat</h1>
+
+			<p ng-repeat="tab in tableau">{{ tab }}</p>
+			<p ng-repeat="tab in tableau" ng-bind="tab"></p>
+		</section>
 	</body>
 </html>
