@@ -3,6 +3,7 @@
 	<head>
 		<script src="./node_modules/angular/angular.min.js"></script>
 		<script src="./home-controller.js"></script>
+		<script src="./mes-directives.js"></script>
 	</head>
 
 	<body ng-app="myApp">
@@ -41,6 +42,74 @@
 
 			<p ng-repeat="tab in tableau">{{ tab }}</p>
 			<p ng-repeat="tab in tableau" ng-bind="tab"></p>
+
+			<hr />
+			<h1>Démo CRUD (Client)</h1>
+
+			<!-- CRUD Client -->
+			<!-- Formulaire ajout (nom, prénom, CA) -->
+				<!-- Bouton qui ajoute -->
+				<!-- JS pour insérer une nouvelle info : Array.prototype.push() -> clients.push(client) -->
+			
+			<div>
+				<div>
+					<label>Nom :</label>
+					<input type="text" ng-model="formClient.nom" />
+				</div>
+
+				<div>
+					<label>Prénom :</label>
+					<input type="text" ng-model="formClient.prenom" />
+				</div>
+
+				<div>
+					<label>CA :</label>
+					<input type="number" ng-model="formClient.ca" />
+				</div>
+
+				<button ng-click="ajouterClient()">Ajouter</button>
+			</div>
+			
+
+			<!-- Tableau qui liste des clients -->
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Prénom</th>
+						<th>CA</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr ng-repeat="client in clients">
+						<td>{{ client.nom }}</td>
+						<td>{{ client.prenom }}</td>
+						<td>{{ client.ca }}</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+			<hr />
+			<h1>Démo Directives spécifiques (mes-directives.js)</h1>
+
+			<p ma-directive></p>
+			<ma-directive></ma-directive>
+
+			<!-- A transformer en directive : dirBold -->
+			<!-- <strong ng-click="showMessage()">Le message ...</strong>
+			<strong ng-click="showMessage2()">Le message 2...</strong>
+			<strong ng-click="showMessage4()">Le message 3...</strong> -->
+
+			<dir-bold message="nom" alert="une alerte du message">
+				UN CONTENU
+			</dir-bold>
+
+			<dir-bold message="nom" alert="une alerte du message 2">
+				UN AUTRE CONTENU
+			</dir-bold>
 		</section>
 	</body>
 </html>
