@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="./dir-tooltip.css" rel="stylesheet" />
+
 		<script src="./node_modules/angular/angular.min.js"></script>
 		<script src="./home-controller.js"></script>
 		<script src="./mes-directives.js"></script>
@@ -108,8 +110,15 @@
 			</dir-bold>
 
 			<dir-bold message="nom" alert="une alerte du message 2">
-				UN AUTRE CONTENU
+				UN AUTRE <u>CONTENU</u>
 			</dir-bold>
+
+			<hr />
+			<h1>Démo Directive spécifique : Tooltip (mes-directives.js)</h1>
+
+			<!-- Directives possibles : ngClass, ngShow / ngHide, ngMouseenter, ngMouseleave, ngIf -->
+
+			<p>Un paragraphe avec <span dir-tooltip="L'information à afficher">une information compliquée</span>.</p>
 		</section>
 	</body>
 </html>

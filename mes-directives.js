@@ -30,4 +30,36 @@
 			template: '<div> <ng-transclude></ng-transclude> <strong ng-click="showMessage()">{{ message }}</strong> </div>'
 		}
 	});
+
+	app.directive("dirTooltip", function() {
+		return {
+			restrict: 'A',
+			transclude: true,
+			replace: true,
+
+			scope: {
+				dirTooltip: '@'
+			},
+
+			link: function(scope) {
+				scope.estAffiche = false;
+
+				scope.afficher = function() {
+					this.estAffiche = true;
+				};
+
+				scope.cacher = function() {
+					this.estAffiche = false;
+				};
+			},
+
+			template:	'<div class="dir-tooltip">' +
+						'	<div class="dir-tooltip-content" ng-mouseenter="afficher()" ng-mouseleave="cacher()">' +
+						'		<ng-transclude></ng-transclude>' +
+						'	</div>' +
+
+						'	<div ng-show="estAffiche" class="dir-tooltip-info">{{ dirTooltip }}</div>' +
+						'</div>'
+		}
+	});
 })();

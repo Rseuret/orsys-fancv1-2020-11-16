@@ -1,0 +1,19 @@
+.dir-tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.dir-tooltip-content {
+	display: inline-block;
+}
+
+.dir-tooltip-info {
+	position: absolute;
+	top: -40px;
+	left: 50%;
+	min-width: 200px;
+	padding: 10px;
+	background: rgb(100, 150, 200);
+	border-radius: 4px;
+	transform: translateX(-50%);
+}
