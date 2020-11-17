@@ -1,5 +1,6 @@
 import angular from 'angular';
-import homeCtrl from './home-controller.js';
+import angularRoute from 'angular-route';
+
 // import { maDirective, dirBold, dirTooltip } from './mes-directives';
 import maDirective from './components/ma-directive';
 import dirBold from './components/dir-bold';
@@ -7,6 +8,8 @@ import dirTooltip from './components/dir-tooltip';
 import dirTreeView from './components/dir-tree-view';
 
 import clientCa from './filters/client-ca';
+
+import routes from './routes';
 
 // const dirTooltip = () => import(/* webpackChunkName: "sonnomJs" */ './components/dir-tooltip');
 
@@ -16,9 +19,11 @@ import clientCa from './filters/client-ca';
 import 'bootstrap/scss/bootstrap.scss';
 
 
-let app = angular.module("myApp", []);
+//On dit à Angular que notre Application "myApp" a besoin du module "ngRoute" (qui se trouve dans angular-route)
+let app = angular.module("myApp", [ 'ngRoute' ]);
 
-app.controller("homeCtrl", homeCtrl);
+//Configuration ngRoute
+app.config(routes);
 
 app.directive("maDirective", maDirective);
 app.directive("dirBold", dirBold);

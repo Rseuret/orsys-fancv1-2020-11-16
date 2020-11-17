@@ -19,6 +19,7 @@
   "homepage": "https://github.com/jperrouault-school-job/orsys-fancv1-2020-11-16#readme",
   "dependencies": {
     "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
     "bootstrap": "^4.5.3"
   },
   "devDependencies": {

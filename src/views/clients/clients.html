@@ -1,0 +1,64 @@
+<h1>Démo CRUD (Client)</h1>
+
+<!-- CRUD Client -->
+<!-- Formulaire ajout (nom, prénom, CA) -->
+	<!-- Bouton qui ajoute -->
+	<!-- JS pour insérer une nouvelle info : Array.prototype.push() -> clients.push(client) -->
+
+<div>
+	<div>
+		<label>Nom :</label>
+		<input type="text" ng-model="formClient.nom" />
+	</div>
+
+	<div>
+		<label>Prénom :</label>
+		<input type="text" ng-model="formClient.prenom" />
+	</div>
+
+	<div>
+		<label>CA :</label>
+		<input type="number" ng-model="formClient.ca" />
+	</div>
+
+	<button ng-click="ajouterClient()">Ajouter</button>
+</div>
+
+
+<!-- Tableau qui liste des clients -->
+<table>
+	<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>CA</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr ng-repeat="client in clients">
+			<td>{{ client.nom }}</td>
+			<td>{{ client.prenom }}</td>
+			<td>{{ client.ca }}</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Tableau avec filtre</h2>
+<table>
+	<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>CA</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr ng-repeat="client in clients">
+			<td>{{ client.nom }}</td>
+			<td>{{ client.prenom }}</td>
+			<td>{{ client.ca | clientCa }}</td>
+		</tr>
+	</tbody>
+</table>

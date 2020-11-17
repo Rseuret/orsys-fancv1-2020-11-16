@@ -11,149 +11,17 @@
 	</head>
 
 	<body ng-app="myApp">
-		<section ng-controller="homeCtrl">
-			<h1>Démo ngModel et ngBind et Expressions</h1>
-			<div>
-				<div>
-					<label>Nom :</label>
-					<input type="text" ng-model="nom" ng-model-options="{ updateOn: 'blur', debounce: 1000 }" />
-				</div>
+		<nav>
+			<ul>
+				<li><a href="#!/">Accueil</a></li>
+				<li><a href="#!/clients">Liste des clients</a></li>
+			</ul>
+		</nav>
 
-				<p ng-bind="nom"></p>
-				<p>{{ nom }}</p>
-			</div>
-
-			<hr />
-			<h1>Démo ngModel et ngStyle</h1>
-			<select ng-model="maCouleur">
-				<option value="#000">Noir</option>
-				<option value="yellow">Jaune</option>
-				<option value="#F00">Rouge</option>
-				<option value="#00F">Bleu</option>
-			</select>
-
-			<!-- ngStyle attend un obj literal -->
-			<p ng-style="{ color: maCouleur }">{{ maCouleur }}</p>
-
-			<hr />
-			<h1>Démo ngClick</h1>
-
-			<!-- ngClick -->
-			<button ng-click="showName()">Afficher le nom</button>
-
-			<hr />
-			<h1>Démo ngRepeat</h1>
-
-			<p ng-repeat="tab in tableau">{{ tab }}</p>
-			<p ng-repeat="tab in tableau" ng-bind="tab"></p>
-
-			<hr />
-			<h1>Démo CRUD (Client)</h1>
-
-			<!-- CRUD Client -->
-			<!-- Formulaire ajout (nom, prénom, CA) -->
-				<!-- Bouton qui ajoute -->
-				<!-- JS pour insérer une nouvelle info : Array.prototype.push() -> clients.push(client) -->
-			
-			<div>
-				<div>
-					<label>Nom :</label>
-					<input type="text" ng-model="formClient.nom" />
-				</div>
-
-				<div>
-					<label>Prénom :</label>
-					<input type="text" ng-model="formClient.prenom" />
-				</div>
-
-				<div>
-					<label>CA :</label>
-					<input type="number" ng-model="formClient.ca" />
-				</div>
-
-				<button ng-click="ajouterClient()">Ajouter</button>
-			</div>
-			
-
-			<!-- Tableau qui liste des clients -->
-			<table>
-				<thead>
-					<tr>
-						<th>Nom</th>
-						<th>Prénom</th>
-						<th>CA</th>
-					</tr>
-				</thead>
-				
-				<tbody>
-					<tr ng-repeat="client in clients">
-						<td>{{ client.nom }}</td>
-						<td>{{ client.prenom }}</td>
-						<td>{{ client.ca }}</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<h2>Tableau avec filtre</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>Nom</th>
-						<th>Prénom</th>
-						<th>CA</th>
-					</tr>
-				</thead>
-				
-				<tbody>
-					<tr ng-repeat="client in clients">
-						<td>{{ client.nom }}</td>
-						<td>{{ client.prenom }}</td>
-						<td>{{ client.ca | clientCa }}</td>
-					</tr>
-				</tbody>
-			</table>
-
-
-
-			<hr />
-			<h1>Démo Directives spécifiques (mes-directives.js)</h1>
-
-			<p ma-directive></p>
-			<ma-directive></ma-directive>
-
-			<!-- A transformer en directive : dirBold -->
-			<!-- <strong ng-click="showMessage()">Le message ...</strong>
-			<strong ng-click="showMessage2()">Le message 2...</strong>
-			<strong ng-click="showMessage4()">Le message 3...</strong> -->
-
-			<dir-bold message="nom" alert="une alerte du message">
-				UN CONTENU
-			</dir-bold>
-
-			<dir-bold message="nom" alert="une alerte du message 2">
-				UN AUTRE <u>CONTENU</u>
-			</dir-bold>
-
-			<hr />
-			<h1>Démo Directive spécifique : Tooltip (mes-directives.js)</h1>
-
-			<!-- Directives possibles : ngClass, ngShow / ngHide, ngMouseenter, ngMouseleave, ngIf -->
-
-			<p>Un paragraphe avec <span dir-tooltip="L'information à afficher">une information compliquée</span>.</p>
-
-
-
-			<hr />
-			<h1>Tree-View</h1>
-
-			<dir-tree-view items="items"></dir-tree-view>
-
-
-
-
-			<hr />
-			<h1>Démo Constante API_URL</h1>
-			<p>{{ apiUrl }} qui provient de la constante API_URL.</p>
-		</section>
+		<p>
+			LE ngView VA INCLURE LE TEMPLATE LIÉ AU CONTROLLEUR QUI SERA SELECTIONNÉ PAR LA ROUTE (dans la configuration)
+		</p>
+		
+		<ng-view></ng-view>
 	</body>
 </html>
