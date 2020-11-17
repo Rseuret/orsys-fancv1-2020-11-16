@@ -1,0 +1,7 @@
+<div class="dir-tooltip">
+	<div class="dir-tooltip-content" ng-mouseenter="afficher()" ng-mouseleave="cacher()">
+		<ng-transclude></ng-transclude>
+	</div>
+
+	<div ng-show="estAffiche" class="dir-tooltip-info">{{ dirTooltip }}</div>
+</div>
