@@ -26,3 +26,5 @@ app.directive("dirTooltip", dirTooltip);
 app.directive("dirTreeView", dirTreeView);
 
 app.filter("clientCa", clientCa);
+
+app.constant("API_URL", "http://localhost:3000/");
