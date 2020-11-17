@@ -38,6 +38,26 @@ mafnc();
 
 
 
+//exemple d'export par défaut + multiple
+let mafnc = function() {
+	//...
+};
+
+const variable = {
+	//...
+};
+
+const Personne = {
+	//...
+};
+
+export default mafnc;
+export { variable, Personne };
+
+//exemple d'import défaut + multiple
+import mafnc, { variable, Personne } from './lefichier.js';
+
+
 
 
 
