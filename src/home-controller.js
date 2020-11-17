@@ -12,6 +12,39 @@ let homeCtrl = [ //On utilise un tableau pour contrer la problématique de chang
 			{ nom: "par exemple", prenom: "toto", ca: 123456 }
 		];
 
+
+		//Liste des items pour le TreeView
+		$scope.items = [
+			{
+				name: "Element 1",
+				children: [
+					{
+						name: "Element 1.1",
+						children: [
+							{ name: "Element 1.1.1" },
+							{
+								name: "Element 1.1.2",
+								children: [
+									{ name: "Element 1.1.2.1" }
+								]
+							}
+						]
+					},
+					
+					{
+						name: "Element 1.2",
+						children: [
+							{ name: "Element 1.2.1" }
+						]
+					}
+				]
+			},
+
+			{ name: "Element 2" },
+			{ name: "Element 3" }
+		];
+
+
 		$scope.maFonction = function() {
 			//...
 			//Ici, le mot-clé this existera

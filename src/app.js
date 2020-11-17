@@ -4,6 +4,7 @@ import homeCtrl from './home-controller.js';
 import maDirective from './components/ma-directive';
 import dirBold from './components/dir-bold';
 import dirTooltip from './components/dir-tooltip';
+import dirTreeView from './components/dir-tree-view';
 
 // const dirTooltip = () => import(/* webpackChunkName: "sonnomJs" */ './components/dir-tooltip');
 
@@ -20,3 +21,4 @@ app.controller("homeCtrl", homeCtrl);
 app.directive("maDirective", maDirective);
 app.directive("dirBold", dirBold);
 app.directive("dirTooltip", dirTooltip);
+app.directive("dirTreeView", dirTreeView);

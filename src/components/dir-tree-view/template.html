@@ -1,0 +1,12 @@
+<ul>
+	<li ng-repeat="item in items" ng-class="{ active: item.active }">
+		<ng-template ng-if="item.children && item.children.length">
+			<span ng-if="!item.active">+</span>
+			<span ng-if="item.active">-</span>
+		</ng-template>
+
+		<span ng-click="toggle(item)">{{ item.name }}</span>
+
+		<dir-tree-view items="item.children" ng-if="item.active"></dir-tree-view>
+	</li>
+</ul>
