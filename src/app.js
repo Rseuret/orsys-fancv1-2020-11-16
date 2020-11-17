@@ -7,6 +7,12 @@ import dirTooltip from './components/dir-tooltip';
 
 // const dirTooltip = () => import(/* webpackChunkName: "sonnomJs" */ './components/dir-tooltip');
 
+
+// import './style.scss';
+// import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/scss/bootstrap.scss';
+
+
 let app = angular.module("myApp", []);
 
 app.controller("homeCtrl", homeCtrl);
