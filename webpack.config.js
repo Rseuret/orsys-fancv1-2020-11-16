@@ -14,6 +14,13 @@ var config = {
 		minimize: true
 	},
 
+	devServer: {
+		port: 8080,
+		historyApiFallback: {
+			index: 'index.html'
+		}
+	},
+
 	module: {
 		//... liste des règles de traitement des fichiers
 		rules: [
