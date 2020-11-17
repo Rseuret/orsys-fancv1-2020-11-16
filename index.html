@@ -94,6 +94,25 @@
 				</tbody>
 			</table>
 
+			<h2>Tableau avec filtre</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Prénom</th>
+						<th>CA</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr ng-repeat="client in clients">
+						<td>{{ client.nom }}</td>
+						<td>{{ client.prenom }}</td>
+						<td>{{ client.ca | clientCa }}</td>
+					</tr>
+				</tbody>
+			</table>
+
 
 
 			<hr />

@@ -6,6 +6,8 @@ import dirBold from './components/dir-bold';
 import dirTooltip from './components/dir-tooltip';
 import dirTreeView from './components/dir-tree-view';
 
+import clientCa from './filters/client-ca';
+
 // const dirTooltip = () => import(/* webpackChunkName: "sonnomJs" */ './components/dir-tooltip');
 
 
@@ -22,3 +24,5 @@ app.directive("maDirective", maDirective);
 app.directive("dirBold", dirBold);
 app.directive("dirTooltip", dirTooltip);
 app.directive("dirTreeView", dirTreeView);
+
+app.filter("clientCa", clientCa);
