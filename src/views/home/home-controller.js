@@ -10,7 +10,6 @@ let homeCtrl = [ //On utilise un tableau pour contrer la problématique de chang
 		$scope.nom = "Babar";
 		$scope.tableau = [ 1, 23, 4 ];
 
-
 		//Liste des items pour le TreeView
 		$scope.items = [
 			{
